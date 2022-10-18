@@ -1,0 +1,14 @@
+class Question
+  attr_accessor :num_one, :num_two, :operator
+
+  @@operators = ["+","-","/","*"]
+
+  def initialize
+    @num_one = rand(1..20)
+    @num_two = rand(1..20)
+    @operator = @@operators[rand(0..3)]
+    @question = "What is #{num_one} #{operator} #{num_two}?"
+    @answer = eval("#{num_one} #{operator} #{num_two}")
+  end
+
+end

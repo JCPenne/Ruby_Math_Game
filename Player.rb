@@ -2,9 +2,9 @@ class Player
   attr_accessor :name, :lives, :playerNum
 
   def initialize(name,num)
-    self.name = name
-    self.lives = 3
-    self.playerNum = num
+    @name = name
+    @lives = 3
+    @playerNum = num
   end
 
   def lose_a_life
