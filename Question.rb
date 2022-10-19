@@ -8,7 +8,9 @@ class Question
     @num_two = rand(1..20)
     @operator = @@operators[rand(0..3)]
     @question_num = count
+
     puts "Question #{question_num}: What is #{num_one} #{operator} #{num_two}?"
+    
     @response = gets.chomp.to_i
     @answer = eval("#{num_one} #{operator} #{num_two}")
     check_response(@response,@answer)
