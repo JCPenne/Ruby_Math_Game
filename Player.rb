@@ -3,7 +3,7 @@ class Player
 
   def initialize(num)
     @lives = 3
-    @playerNum = "Player#{num}"
+    @playerNum = "Player #{num}"
   end
 
   def lose_a_life
