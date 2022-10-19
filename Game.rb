@@ -31,9 +31,6 @@ class Game
     Question.new(@question_counter)
   end
 
-  def check_response
-  end
-
 
 
 end
