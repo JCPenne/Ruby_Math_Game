@@ -4,21 +4,31 @@ require './Question.rb'
 
 
 class Game
+  attr_accessor :players, :question_counter, :player_counter
   
-  @@question_counter = 0
-  @@player_counter = 0
+  def initialize(player_count)
+    @players = []
+    @player_counter = 0
 
-  def initialize
+    @question_counter = 0
+
+    populate_players(player_count)
   end
 
-  def new_player(name)
-    @@player_counter += 1
-    Player.new(name, @@player_counter)
+  def populate_players(player_count)
+    until @players.length() == player_count do
+      @players.push(new_player())
+    end
+  end
+
+  def new_player
+    @player_counter += 1
+    Player.new(@player_counter)
   end
 
   def new_question
-    @@question_counter += 1
-    Question.new(@@question_counter)
+    @question_counter += 1
+    Question.new(@question_counter)
   end
 
   def check_response
